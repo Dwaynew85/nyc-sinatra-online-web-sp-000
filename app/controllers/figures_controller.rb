@@ -12,7 +12,6 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
-    binding.pry
     @figure = Figure.create(params[:figure])
     unless params[:title][:name].empty?
       @title = Title.create(params[:title])
