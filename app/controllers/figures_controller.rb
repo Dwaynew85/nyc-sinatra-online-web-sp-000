@@ -37,6 +37,7 @@ class FiguresController < ApplicationController
     binding.pry
     @figure = Figure.find(params[:id])
     @figure.titles.clear
+    @figure.landmarks.clear
     @figure.update(params[:figure])
     @figure.save
     redirect to "/figures/#{@figure.id}"
@@ -47,3 +48,4 @@ class FiguresController < ApplicationController
     erb :"figures/show"
   end
 end
+
