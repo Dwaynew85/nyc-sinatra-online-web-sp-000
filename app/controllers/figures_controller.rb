@@ -12,7 +12,7 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
-    @figure = Figure.find_or_create_by(params[:figure])
+    @figure = Figure.create(params[:figure])
     unless params[:title][:name].empty?
       @title = Title.find_or_create_by(params[:title])
       @figure.titles << @title
