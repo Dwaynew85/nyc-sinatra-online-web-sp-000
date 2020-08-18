@@ -39,6 +39,14 @@ class FiguresController < ApplicationController
     @figure.titles.clear
     @figure.landmarks.clear
     @figure.update(params[:figure])
+    unless params[:title][:name].empty?
+      @title = Title.find_or_create_by(params[:title])
+      @figure.titles << @title
+    end
+    unless params[:landmark][:name].empty?
+      @landmark = Landmark.find_or_create_by(params[:landmark])
+      @figure.landmarks << @landmark
+    end
     @figure.save
     redirect to "/figures/#{@figure.id}"
   end
