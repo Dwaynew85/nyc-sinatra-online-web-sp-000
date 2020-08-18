@@ -7,13 +7,13 @@
   <label><strong>Titles</strong></label>
   <br><br>
   <% @titles.each do |title|%>
-    <input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>" id="title_<%= title.id %>">
+    <input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>" id= "figure_title">
     <%= title.name%><br>
   <% end %>
   <br>
 
   <label=><strong>Create New Title:</strong></label><br><br>
-  <input type="text" id= "figure_title" name="title[name]"><br>
+  <input type="text" id= "new_title" name="title[name]"><br>
   <br>
 
   <label><strong>Landmarks</strong></label><br><br>
