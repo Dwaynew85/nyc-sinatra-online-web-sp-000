@@ -14,11 +14,11 @@ class FiguresController < ApplicationController
   post '/figures' do
     binding.pry
     @figure = Figure.create(params[:figure])
-    unless params[:title].empty?
+    unless params[:title][:name].empty?
       @title = Title.create(params[:title])
       @figure.titles << @title
     end
-    unless params[:landmark].empty?
+    unless params[:landmark][:name].empty?
       @landmark = Landmark.create(params[:landmark])
       @figure.landmarks << @landmark
     end
