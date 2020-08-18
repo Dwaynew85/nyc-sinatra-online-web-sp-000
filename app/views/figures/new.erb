@@ -18,13 +18,13 @@
 
   <label><strong>Landmarks</strong></label><br><br>
   <% @landmarks.each do |landmark| %>
-    <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>"><%= landmark.name %><br>
+    <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" id="landmark_name"><%= landmark.name %><br>
   <% end %><br>
 
   <label><strong>Create New Landmark:</strong></label><br><br>
 
   <label>Name:</label>
-  <input type="text" id="landmark_name" name="landmark[name]">
+  <input type="text" id="new_landmark" name="landmark[name]" >
 
   <label>Year</label>
   <input type="text" id="landmark_year_completed" name="landmark[year_completed]">
