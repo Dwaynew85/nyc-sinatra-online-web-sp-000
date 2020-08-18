@@ -34,7 +34,6 @@ class FiguresController < ApplicationController
   end
 
   patch '/figures/:id' do
-    binding.pry
     @figure = Figure.find(params[:id])
     @figure.titles.clear
     @figure.landmarks.clear
